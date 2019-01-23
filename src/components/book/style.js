@@ -11,7 +11,8 @@ export const BoxBook = styled.div`
   position: relative;
   margin-right: 30px;
   min-width: 300px;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
+  
   img {
     width: 130px;
     height: auto;
@@ -52,7 +53,7 @@ export const Description = styled.span`
   text-align: justify;
 `;
 
-export const Plus = styled.span`
+export const Plus = styled.a`
   position: absolute;
   color: #fff;
   top: 200px;
@@ -72,4 +73,5 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items:center;
 `;

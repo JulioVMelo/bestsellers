@@ -9,20 +9,16 @@ export default class App extends Component {
     listOfBooks: [],
   };
   
-  handleAddRepository = async (e) => {
-    e.preventDefault();
+  componentDidMount = async () => {
     try {
-      
       const response = await api.get(``);      
       this.setState({
         listOfBooks: response.data.results.books,
       });
-      // console.log(response.data.results);
     } catch (err) {
       console.log("Ocorreu um erro!");     
     } finally {
       console.log(this.state.listOfBooks);
-      // console.log(this.state.listOfBooks);
     }
   };
   
@@ -32,7 +28,6 @@ export default class App extends Component {
       <Fragment>
         <GlobalStyle />
         <Header />
-        <button onClick={this.handleAddRepository}>clique</button>
         <div className="Books">
           <Book books={this.state.listOfBooks} />
         </div>

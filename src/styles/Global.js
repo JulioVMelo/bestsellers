@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'font-awesome/css/font-awesome.css';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -43,6 +44,11 @@ body {
   flex-wrap: wrap;
   padding: 30px 200px;
   margin-top: -450px;
+  min-width:350px;
+  
+  @media screen and (max-width: 900px){
+    padding: 30px 0px;
+  }
 }
 `;
 

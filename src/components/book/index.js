@@ -10,7 +10,7 @@ const Book = ({ books }) => (
       <Author>{book.author}</Author>
       <Title>{book.title}</Title>
       <Description>{book.description}</Description>
-      <Plus>+</Plus>
+      <Plus href={book.amazon_product_url} target="_blank"><span class="fa fa-amazon"></span></Plus>
     </BoxBook> 
   ))}
   </Container>

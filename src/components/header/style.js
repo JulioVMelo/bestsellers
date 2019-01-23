@@ -14,7 +14,11 @@ export const HeaderUI = styled.header`
   background-size: cover;
   background-blend-mode:multiply;
   color: #fab706;
+  min-width: 350px;
   
+  @media screen and (max-width:900px){
+    padding: 20px 20px;
+  }
 `;
 
 export const Info = styled.div`
