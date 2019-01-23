@@ -3,6 +3,7 @@ import GlobalStyle from './styles/Global';
 import Header from './components/header/index';
 import Book from './components/book/index';
 import api from './services/api';
+import Footer from './components/footer/index';
 
 export default class App extends Component {
   state = {
@@ -31,6 +32,7 @@ export default class App extends Component {
         <div className="Books">
           <Book books={this.state.listOfBooks} />
         </div>
+        <Footer />
       </Fragment>
     );
   }
