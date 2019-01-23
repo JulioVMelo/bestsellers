@@ -1,8 +1,8 @@
 import React from 'react';
-import { BoxBook, Position, Author, Title, Description, Plus } from './style';
+import { BoxBook, Position, Author, Title, Description, Plus, Container } from './style';
 
 const Book = ({ books }) => (
-  <div>
+  <Container>
   { books.map(book => (
     <BoxBook key={book.primary_isbn10}>
       <Position>{book.rank}</Position>
@@ -13,7 +13,7 @@ const Book = ({ books }) => (
       <Plus>+</Plus>
     </BoxBook> 
   ))}
-  </div>
+  </Container>
 );
 
 export default Book;

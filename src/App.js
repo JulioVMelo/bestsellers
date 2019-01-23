@@ -15,7 +15,7 @@ export default class App extends Component {
       
       const response = await api.get(``);      
       this.setState({
-        listOfBooks: [ response.data.results.books ],
+        listOfBooks: response.data.results.books,
       });
       // console.log(response.data.results);
     } catch (err) {

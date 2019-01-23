@@ -67,3 +67,9 @@ export const Plus = styled.span`
   cursor: pointer;
   font-size:18px;
 `;
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`;
