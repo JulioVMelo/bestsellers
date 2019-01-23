@@ -1,28 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from 'react';
+import GlobalStyle from './styles/Global';
+import Header from './components/header/index';
+import Book from './components/book/index';
+import api from './services/api';
 
-class App extends Component {
+export default class App extends Component {
+  state = {
+    listOfBooks: [],
+  };
+  
+  handleAddRepository = async (e) => {
+    e.preventDefault();
+    try {
+      
+      const response = await api.get(``);      
+      this.setState({
+        listOfBooks: [ response.data.results.books ],
+      });
+      // console.log(response.data.results);
+    } catch (err) {
+      console.log("Ocorreu um erro!");     
+    } finally {
+      console.log(this.state.listOfBooks);
+      // console.log(this.state.listOfBooks);
+    }
+  };
+  
   render() {
+    
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Fragment>
+        <GlobalStyle />
+        <Header />
+        <button onClick={this.handleAddRepository}>clique</button>
+        <div className="Books">
+          <Book books={this.state.listOfBooks} />
+        </div>
+      </Fragment>
     );
   }
 }
-
-export default App;
