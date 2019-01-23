@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import bgBoxTitle from '../../assets/images/bg-boxTitle.png';
-import bgHeader from '../../assets/images/bgHeader.png';
+import bgBoxTitle from '../../assets/images/bg-boxTitle-min.png';
+import bgHeader from '../../assets/images/bgHeader-min.png';
 
 export const HeaderUI = styled.header`
   display: flex;
