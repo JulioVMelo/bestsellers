@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import GlobalStyle from './styles/Global';
-import Header from './components/header/index';
-import Book from './components/book/index';
+import Header from './components/header/';
+import Book from './components/book/';
 import api from './services/api';
-import Footer from './components/footer/index';
+import Footer from './components/footer/';
 
 export default class App extends Component {
   state = {
