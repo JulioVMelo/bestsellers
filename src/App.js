@@ -1,39 +1,36 @@
-import React, { Component, Fragment } from 'react';
-import GlobalStyle from './styles/Global';
-import Header from './components/header/';
-import Book from './components/book/';
-import api from './services/api';
-import Footer from './components/footer/';
+import React, { useState, useEffect } from "react";
+import GlobalStyle from "./styles/Global";
+import Header from "./components/header/";
+import Book from "./components/book/";
+import api from "./services/api";
+import Footer from "./components/footer/";
 
-export default class App extends Component {
-  state = {
-    listOfBooks: [],
-  };
-  
-  componentDidMount = async () => {
-    try {
-      const response = await api.get(``);      
-      this.setState({
-        listOfBooks: response.data.results.books,
-      });
-    } catch (err) {
-      console.log("Ocorreu um erro!");     
-    } finally {
-      console.log(this.state.listOfBooks);
+export default function App() {
+  const [listOfBooks, setListOfBooks] = useState([]);
+
+  useEffect(() => {
+    async function ConsultApi() {
+      try {
+        const response = await api.get(``);
+        setListOfBooks(response.data.results.books);
+        console.log("List of books", listOfBooks);
+      } catch (err) {
+        console.log("Ocorreu um erro");
+      }
     }
-  };
-  
-  render() {
-    
-    return (
-      <Fragment>
-        <GlobalStyle />
-        <Header />
-        <div className="Books">
-          <Book books={this.state.listOfBooks} />
-        </div>
-        <Footer />
-      </Fragment>
-    );
-  }
+
+    ConsultApi();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+      <div className="Books">
+        <Book books={listOfBooks} />
+      </div>
+      <Footer />
+    </>
+  );
 }

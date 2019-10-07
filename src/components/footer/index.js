@@ -1,9 +1,9 @@
-import React from 'react';
-import { FooterUI } from './style';
+import React from "react";
+import { FooterUI } from "./style";
 
 const Footer = () => (
-  <FooterUI >
-    Made with <span class="fa fa-heart"></span>
+  <FooterUI>
+    Made with <span className="fa fa-heart"></span>
   </FooterUI>
 );
 
